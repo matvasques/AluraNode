@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<body>
+    <h1>Listagem de livros</h1>
+    <table>
+        <tr>
+            <td><strong>ID</strong></td>
+            <td><strong>Título</strong></td>
+            <td><strong>Descrição</strong></td>
+        </tr>
+        <!-- data é uma variavel do marko que recebe dados enviados na função marko() -->
+        <tr for (livro in data.livros)>
+            <td>${livro.id}</td>
+            <td>${livro.titulo}</td>
+            <td>${livro.descricao}</td>
+        </tr>
+    </table>
+</body>
+</html>
