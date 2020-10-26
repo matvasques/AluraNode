@@ -17,21 +17,19 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
 function render(input, out, __component, component, state) {
   var data = input;
 
-  out.w("<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\"><script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script><script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx\" crossorigin=\"anonymous\"></script><title>Lista</title></head><body>");
+  out.w("<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Lista</title></head><body>");
 
   component_globals_tag({}, out);
 
-  out.w("<h1>Listagem de livros</h1><hr><table class=\"table\"><thead><tr><td scope=\"col\"><strong>ID</strong></td><td scope=\"col\"><strong>Preço</strong></td><td scope=\"col\"><strong>Título</strong></td><td scope=\"col\"><strong>Descrição</strong></td></tr></thead><tbody>");
+  out.w("<h1>Listagem de livros</h1><table><tr><td><strong>ID</strong></td><td><strong>Título</strong></td><td><strong>Descrição</strong></td></tr>");
 
-  var for__23 = 0;
+  var for__15 = 0;
 
   marko_forEach(data.livros, function(livro) {
-    var keyscope__24 = "[" + ((for__23++) + "]");
+    var keyscope__16 = "[" + ((for__15++) + "]");
 
-    out.w("<tr><td scope=\"row\">" +
+    out.w("<tr><td>" +
       marko_escapeXml(livro.id) +
-      "</td><td>" +
-      marko_escapeXml(livro.preco) +
       "</td><td>" +
       marko_escapeXml(livro.titulo) +
       "</td><td>" +
@@ -39,11 +37,11 @@ function render(input, out, __component, component, state) {
       "</td></tr>");
   });
 
-  out.w("</tbody></table><hr><div><a class=\"btn btn-primary\" href=\"/livros/form\">Adicionar livro</a></div><hr><div class=\"input-group mb-3\"><input type=\"text\" class=\"form-control\" placeholder=\"Pesquisar por id\"><div class=\"input-group-append\"><a href=\"/busca\" class=\"btn btn-primary \">Pesquisar livro</a></div></div>");
+  out.w("</table>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "38");
+  await_reorderer_tag({}, out, __component, "21");
 
   out.w("</body></html>");
 }
